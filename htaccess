@@ -1,0 +1,7 @@
+<DirectoryMatch "^/.*/\.git">
+    Require all denied
+</DirectoryMatch>
+
+<FilesMatch "\.(json|lock|config)$">
+    Require all denied
+</FilesMatch>
