@@ -26,3 +26,8 @@ echo "<?php phpinfo(); ?>" > /var/www/moodledata/info.php
 sudo nano /etc/php/8.4/apache2/conf.d/99-max-input-vars.ini
 sudo systemctl restart apache2
 
+
+sudo apt-get install certbot python3-certbot-apache
+sudo certbot --apache
+sudo certbot renew --dry-run
+
