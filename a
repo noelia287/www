@@ -22,3 +22,7 @@ sudo systemctl restart apache2
 ls /etc/php/8.4/fpm/    # If you're using PHP-FPM
 
 echo "<?php phpinfo(); ?>" > /var/www/moodledata/info.php
+
+sudo nano /etc/php/8.4/apache2/conf.d/99-max-input-vars.ini
+sudo systemctl restart apache2
+
