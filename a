@@ -7,12 +7,9 @@ sudo a2enconf php8.2-fpm
 
 sudo systemctl restart apache2
 
+sudo apt-get install php8.2-gd
 
-sudo apt-get remove --purge php8.2-xml
-sudo apt-get install php8.2-xml
+sudo apt-get install php8.2-intl
 
+sudo apt-get install php8.2-soap
 
-sudo chown -R www-data:www-data /var/www/moodle
-sudo chown -R www-data:www-data /var/www/moodledata
-sudo chmod -R 755 /var/www/moodle
-sudo chmod -R 755 /var/www/moodledata
