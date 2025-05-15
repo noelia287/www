@@ -1,33 +1,11 @@
-sudo apt-get install php8.2-xml php8.2-mbstring php8.2-mysql php8.2-curl php8.2-zip
+username,password,firstname,lastname,email
+alu1n,Alu1pass!,Alu1nom,Alu1cog1 Alu1cog2,alu1@example.com
+alu2n,Alu2pass!,Alu2nom,Alu2cog1 Alu2cog2,alu2@example.com
+alu3n,Alu3pass!,Alu3nom,Alu3cog1 Alu3cog2,alu3@example.com
+alu4n,Alu4pass!,Alu4nom,Alu4cog1 Alu4cog2,alu4@example.com
+alu5n,Alu5pass!,Alu5nom,Alu5cog1 Alu5cog2,alu5@example.com
+alu6n,Alu6pass!,Alu6nom,Alu6cog1 Alu6cog2,alu6@example.com
+alu7n,Alu7pass!,Alu7nom,Alu7cog1 Alu7cog2,alu7@example.com
+alu8n,Alu8pass!,Alu8nom,Alu8cog1 Alu8cog2,alu8@example.com
 
-sudo a2dismod php8.2
-
-sudo a2enmod proxy_fcgi setenvif
-sudo a2enconf php8.2-fpm
-
-sudo systemctl restart apache2
-
-sudo apt-get install php8.2-gd
-
-sudo apt-get install php8.2-intl
-
-sudo apt-get install php8.2-soap
-
-
-sudo apt install libapache2-mod-php8.2
-sudo a2enmod php8.2
-sudo systemctl restart apache2
-
-
-ls /etc/php/8.4/fpm/    # If you're using PHP-FPM
-
-echo "<?php phpinfo(); ?>" > /var/www/moodledata/info.php
-
-sudo nano /etc/php/8.4/apache2/conf.d/99-max-input-vars.ini
-sudo systemctl restart apache2
-
-
-sudo apt-get install certbot python3-certbot-apache
-sudo certbot --apache
-sudo certbot renew --dry-run
 
