@@ -9,3 +9,7 @@ alu7n,Alu7pass!,Alu7nom,Alu7cog1 Alu7cog2,alu7@example.com
 alu8n,Alu8pass!,Alu8nom,Alu8cog1 Alu8cog2,alu8@example.com
 
 
+username,password,firstname,lastname,email
+prof1n,Prof1pass!,Prof1nom,Prof1cog1 Prof1cog2,prof1@example.com
+prof2n,Prof2pass!,Prof2nom,Prof2cog1 Prof2cog2,prof2@example.com
+prof3n,Prof3pass!,Prof3nom,Prof3cog1 Prof3cog2,prof3@example.com
