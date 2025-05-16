@@ -1,15 +1,28 @@
-username,password,firstname,lastname,email
-alu1n,Alu1pass!,Alu1nom,Alu1cog1 Alu1cog2,alu1@example.com
-alu2n,Alu2pass!,Alu2nom,Alu2cog1 Alu2cog2,alu2@example.com
-alu3n,Alu3pass!,Alu3nom,Alu3cog1 Alu3cog2,alu3@example.com
-alu4n,Alu4pass!,Alu4nom,Alu4cog1 Alu4cog2,alu4@example.com
-alu5n,Alu5pass!,Alu5nom,Alu5cog1 Alu5cog2,alu5@example.com
-alu6n,Alu6pass!,Alu6nom,Alu6cog1 Alu6cog2,alu6@example.com
-alu7n,Alu7pass!,Alu7nom,Alu7cog1 Alu7cog2,alu7@example.com
-alu8n,Alu8pass!,Alu8nom,Alu8cog1 Alu8cog2,alu8@example.com
+#!/bin/bash
 
+# === CONFIGURACIÓ ===
+DATA=$(date +%Y-%m-%d)
+BACKUP_DIR="/home/usuari/backups/moodle-$DATA"
 
-username,password,firstname,lastname,email
-prof1n,Prof1pass!,Prof1nom,Prof1cog1 Prof1cog2,prof1@example.com
-prof2n,Prof2pass!,Prof2nom,Prof2cog1 Prof2cog2,prof2@example.com
-prof3n,Prof3pass!,Prof3nom,Prof3cog1 Prof3cog2,prof3@example.com
+MOODLE_DIR="/var/www/html/moodle"
+MOODLEDATA_DIR="/var/www/moodledata"
+DB_NAME="moodle"
+DB_USER="usuari_db"
+DB_PASS="contrasenya_db"
+
+# === CREAR DIRECTORI DE BACKUP ===
+mkdir -p "$BACKUP_DIR"
+
+# === BACKUP DE FITXERS ===
+echo "📁 Copiant fitxers de Moodle..."
+tar -czf "$BACKUP_DIR/moodle_files.tar.gz" "$MOODLE_DIR"
+
+echo "📁 Copiant fitxers de moodledata..."
+tar -czf "$BACKUP_DIR/moodledata.tar.gz" "$MOODLEDATA_DIR"
+
+# === BACKUP DE BASE DE DADES ===
+echo "💾 Copiant base de dades..."
+mysqldump -u "$DB_USER" -p"$DB_PASS" "$DB_NAME" > "$BACKUP_DIR/moodle_db.sql"
+
+# === FINALITZACIÓ ===
+echo "✅ Backup complet guardat a: $BACKUP_DIR"
